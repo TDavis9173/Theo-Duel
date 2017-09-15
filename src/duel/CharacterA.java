@@ -20,5 +20,12 @@ public class CharacterA implements Dueler {
 	public int getHP() {
 		
 		return this.hp;
+		}
+	public boolean determineIfOpponentIsFair(Dueler d, int hp) {
+		if(d.hp=hp) {
+			return true;
+		}
+		else
+			return false;
 	}
 }
