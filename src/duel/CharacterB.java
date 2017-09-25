@@ -1,7 +1,8 @@
 package duel;
 
 public class CharacterB implements Dueler  {
-	public int hitpoints;
+	private int hitpoints;
+	private boolean loaded=false;
 	public CharacterB(){
 		
 	}
@@ -27,15 +28,19 @@ public class CharacterB implements Dueler  {
 	}
 	public int getAction(Object caller) {
 		if(caller instanceof Duel) {
-			double rng=Math.random();
-			if(rng<.33) {
-				return 1;
-			}
-			else if(rng>.33 && rng<.66){
-				return 2;
-			}
-			else{
+			if(loaded==false) {
+				loaded=true;
 				return 0;
+			}
+			else {
+				double rng=Math.random();
+				if(rng<60) {
+					loaded=false;
+					return 1;
+				}
+				else {
+					return 2;
+				}
 			}
 		}
 		else {
@@ -47,4 +52,5 @@ public class CharacterB implements Dueler  {
 			this.hitpoints-=10;
 		}
 	}
+	
 }
