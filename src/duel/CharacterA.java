@@ -1,7 +1,7 @@
 package duel;
 
 public class CharacterA implements Dueler {
-	public int hp;
+	private int hp;
 	public CharacterA() {
 	}
 	public void taunt(){
