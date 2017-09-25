@@ -34,7 +34,7 @@ public class CharacterB implements Dueler  {
 			}
 			else {
 				double rng=Math.random();
-				if(rng<60) {
+				if(rng<.90) {
 					loaded=false;
 					return 1;
 				}
